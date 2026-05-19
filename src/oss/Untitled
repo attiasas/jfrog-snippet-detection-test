@@ -1,0 +1,5 @@
+mkdir -p src/oss
+
+curl -L \
+  https://raw.githubusercontent.com/lodash/lodash/4.17.21-npm/debounce.js \
+  -o src/oss/copied-snippet.js
