@@ -38,7 +38,7 @@ benchmark/
 
 ## CI workflows
 
-This repo uses [Frogbot V3](https://docs.jfrog.com/security/docs/github) plus CLI-based snippet audits.
+This repo uses [Frogbot V3](https://docs.jfrog.com/security/docs/github) (**3.1.3** pinned) plus CLI-based snippet audits.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
@@ -78,4 +78,4 @@ Frogbot and `jf audit --snippet` both rely on platform configuration:
 
 CLI and CI audits use `--watches=minimum-to-respect` by default (override with `JF_SNIPPET_WATCHES` or the `JF_SNIPPET_WATCHES` repository variable).
 
-Frogbot workflows set `JF_USE_CONFIG_PROFILE=true` so scans use the Git Repository profile defined in the JFrog Platform UI (not a local `frogbot-config.yml`).
+Frogbot workflows pin **Frogbot 3.1.3** and set `JF_USE_CONFIG_PROFILE=true` so scans use the Git Repository profile defined in the JFrog Platform UI (not a local `frogbot-config.yml`).
