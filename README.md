@@ -44,7 +44,7 @@ This repo uses [Frogbot V3](https://docs.jfrog.com/security/docs/github) plus CL
 |----------|---------|---------|
 | `frogbot-scan-pull-request.yml` | PR opened/updated | Frogbot scan on pull requests; results in GitHub Security |
 | `frogbot-scan-repository.yml` | Push to `main`, daily cron, manual | Full-repo Frogbot scan; can open fix PRs |
-| `snippet-audit.yml` | Push/PR/manual | `jf audit --snippet` against the working tree |
+| `snippet-audit.yml` | Push/PR/manual | `jf audit --snippet` (JFrog CLI **2.104.1** pinned) |
 | `benchmark-pr-audit.yml` | PR touching `snippets/pr-incoming/**` | Targeted snippet audit for PR benchmark scenarios |
 
 ### GitHub prerequisites
