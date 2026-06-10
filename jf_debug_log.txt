@@ -1,0 +1,1979 @@
+09:34:22 [Debug] JFrog CLI version: 2.104.1
+09:34:22 [Debug] OS/Arch: darwin/arm64
+09:34:22 [Debug] Trace ID for JFrog Platform logs: 2be37e5724d4f0fa
+09:34:22 [Info] ####### Starting jf audit Scan #######
+09:34:22 [Info] Command flags: [--fail=false --sbom=true --sca=true --snippet=true --static-sca=true --working-dirs=/Users/rodolphefontaine/jfrog-snippet-detection-test]
+09:34:22 [Debug] Using <solenglatest> server-id configuration
+09:34:22 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/xray/api/v1/system/version
+09:34:23 [Debug] Xray version: 3.147.2
+09:34:23 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/xray/api/v1/xsc/system/version
+09:34:23 [Debug] XSC version: 3.999.999
+09:34:23 [Info] Scanning path: /Users/rodolphefontaine/jfrog-snippet-detection-test
+09:34:23 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/artifactory/api/system/version
+09:34:23 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/xray/api/v1/xsc/event
+09:34:24 [Debug] Artifactory response: 200 
+09:34:24 [Debug] Artifactory Call Home: Sending info...
+09:34:24 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/jfconnect/api/v1/backoffice/metrics/log
+09:34:24 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/artifactory/api/system/usage
+09:34:24 [Debug] Git repo key was not provided, jas violations will not be checked for this resource.
+09:34:24 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/xray/api/v1/entitlements/feature/contextual_analysis
+09:34:25 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/xray/api/v1/configuration/jas
+09:34:25 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/xray/api/v1/entitlements/feature/curation
+09:34:26 [Debug] JFROG_CLI_RELEASES_REPO is not set
+09:34:26 [Debug] 'JFROG_CLI_RELEASES_REPO' environment variable is not configured. The Xray-Lib Plugin will be downloaded directly from releases.jfrog.io if needed.
+09:34:26 [Debug] Sending HTTP HEAD request to: https://releases.jfrog.io/artifactory/xray-scan-lib/xray-scan-lib-1.3.0-darwin-arm64.tar.gz
+09:34:26 [Debug] Artifactory response: 200 
+09:34:26 [Debug] mapped 1 working directories with indicators/descriptors:
+{
+  "/Users/rodolphefontaine/jfrog-snippet-detection-test": [
+    "/Users/rodolphefontaine/jfrog-snippet-detection-test/package.json",
+    "/Users/rodolphefontaine/jfrog-snippet-detection-test/pom.xml",
+    "/Users/rodolphefontaine/jfrog-snippet-detection-test/requirements.txt",
+    "/Users/rodolphefontaine/jfrog-snippet-detection-test/go.mod",
+    "/Users/rodolphefontaine/jfrog-snippet-detection-test/package-lock.json"
+  ]
+}
+09:34:26 [Debug] Detected 4 technologies at /Users/rodolphefontaine/jfrog-snippet-detection-test: [maven go npm pip].
+09:34:26 [Debug] Xray-Lib plugin not found in system PATH: exec: "xray-scan-plugin": executable file not found in $PATH
+09:34:26 [Debug] Using Xray-Lib executable at: /Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin
+{2026-06-09T09:34:26.707+0200 [DEBUG] plugin: starting plugin: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin args=[]}
+{2026-06-09T09:34:26.711+0200 [DEBUG] plugin: plugin started: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin pid=38700}
+{2026-06-09T09:34:26.711+0200 [DEBUG] plugin: waiting for RPC address: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin}
+{{"@level":"debug","@message":"plugin address","@timestamp":"2026-06-09T09:34:26.913621+02:00","address":"/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin4116257775","network":"unix"}}
+{2026-06-09T09:34:26.913+0200 [DEBUG] plugin: using plugin: version=1}
+{2026-06-09T09:34:26.913+0200 [DEBUG] plugin.xray-scan-plugin: plugin address: address=/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin4116257775 network=unix timestamp="2026-06-09T09:34:26.913+0200"}
+09:34:26 [Info] Generating SBOM...
+09:34:26 [Debug] Environment variables: map[JFROG_XRAY_SNIPPET_SCAN_ENABLE:true]
+09:34:26 [Debug] Scan configuration: {
+  "bom-ref": "file:34112ff146bc49eb35a0ae386c1e0afd",
+  "type": "file",
+  "name": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+  "ignorePatterns": [
+    "*.git*",
+    "*node_modules*",
+    "*target*",
+    "*venv*",
+    "*test*",
+    "dist"
+  ]
+}
+
+{[Info] Logger initialized with level: debug (source: ENV)}
+{[Info] Scan configured with ignore patterns: [*.git* *node_modules* *target* *venv* *test* dist]}
+{[Info] Creating code index client config for url: https://solenglatest.jfrog.io/catalog with token from default jf cli config}
+{[Debug] Using pre-configured feature config for cpp/ast_tracelets}
+{[Debug] NewTraceletFeatureExtractorService: minTraceletSize: 300}
+{[Debug] Using pre-configured feature config for cpp/fuzzy_file_hash}
+{[Debug] PackageContainmentRESTClient: sending GetAllContainment request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/containment/all}
+{[Debug] PackageContainmentRESTClient: received 694 containment relationships}
+{[Info] Fetched 694 containment relationships for cpp}
+{[Debug] Code index extractor created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index extractor created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Info] ═══ Pass 1: Full Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from go.mod with golang}
+{[Debug] [Full Scan] Extracted 1 associations from go.mod}
+{[Debug] extracting from package-lock.json with npm}
+{[Debug] [Full Scan] Extracted 1 associations from package-lock.json}
+{[Debug] extracting from package.json with npm-package-json}
+{[Debug] [Full Scan] Extracted 1 associations from package.json}
+{[Debug] extracting from package_list with nuget}
+{[Debug] error extracting from file package_list with extractor dotnet/pe: the file header does not contain magic bytes %!w(<nil>)}
+{[Debug] extracting from pom.xml with maven}
+{[Debug] [Full Scan] Extracted 1 associations from pom.xml}
+{[Debug] extracting from requirements.txt with pypi}
+{[Debug] extracting from requirements.txt with rootpackage}
+{[Debug] [Full Scan] Extracted 1 associations from requirements.txt}
+{[Info] [Full Scan] Extraction complete - Associations: 5 - Time: 8.614667ms}
+{[Info] [Full Scan] Lookup complete - Time: 500ns; results: 0}
+{[Debug] [Full Scan] Aggregator base-cargo found 0 packages}
+{[Debug] [Full Scan] Aggregator base-conan found 0 packages}
+{[Debug] [Full Scan] Aggregator base-composer found 0 packages}
+{[Debug] [Full Scan] Aggregator base-gem found 0 packages}
+{[Debug] [Full Scan] Aggregator base-golang found 2 packages}
+{[Debug] [Full Scan] Aggregator maven found 2 packages}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package-lock.json}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package.json}
+{[Debug] [Full Scan] Aggregator npm found 71 packages}
+{[Debug] [Full Scan] Aggregator nuget found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pub found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pypi found 1 packages}
+{[Info] [Full Scan] Aggregation complete - Time: 297.833µs}
+{[Info] Pass 1 complete - Packages found: 76}
+{[Info] ═══ Pass 2: Code SCA ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracting from snippets/exact/ffmpeg-avstring.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracted 1 features from snippets/exact/ffmpeg-avstring.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 1 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code SCA] Extraction complete - Associations: 3 - Time: 13.327458ms}
+{[Info] [Code SCA] Running lookup: code-index-lookup-cpp-fuzzy_file_hash}
+{[Debug] Querying with 3 queries - for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-keys with 3 queries (437 bytes, compressed to 232)}
+{[Debug] CodeQueryRESTClient: received 3 results from QueryBatchKeys}
+{[Debug] LookupService: Fetching instances for  3 unique keys}
+{[Debug] CodeQueryRESTClient: sending FetchInstances request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-instances with 3 keys (139 bytes, compressed to 133)}
+{[Debug] CodeQueryRESTClient: received instances for 3 keys from FetchInstances}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  0  from  1  keys}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  2  from  1  keys}
+{[Info] [Code SCA] Lookup complete - Time: 734.439167ms; results: 5}
+{[Info] Decision: aggregating file hash results}
+{[Info] Decision: produced components from file hash matches}
+{[Debug] [Code SCA] Aggregator code-index-aggregator-fuzzy_file_hash-cpp found 1 packages}
+{[Info] [Code SCA] Aggregation complete - Time: 129.75µs}
+{[Info] Pass 2 complete - Packages found: 1}
+{[Info] ═══ Pass 3: Code Snippet Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Found 2 functions in snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Skipping already diagnosed file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] Found 1 functions in snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 0 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code Snippet Scan] Extraction complete - Associations: 2 - Time: 9.136083ms}
+{[Info] [Code Snippet Scan] Running lookup: code-index-lookup-cpp-ast_tracelets}
+{[Debug] Querying with 1 queries - for ecosystem cpp and feature name ast_tracelets}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/query-keys with 1 queries (2206 bytes, compressed to 820)}
+{[Debug] CodeQueryRESTClient: received 1 results from QueryBatchKeys}
+{[Debug] LookupService: No keys found, returning empty results}
+{[Info] [Code Snippet Scan] Lookup complete - Time: 460.309417ms; results: 0}
+{[Info] Decision: aggregating results over functions}
+{[Info] Decision: produced components}
+{[Debug] [Code Snippet Scan] Aggregator code-index-aggregator-tracelets-cpp found 0 packages}
+{[Info] [Code Snippet Scan] Aggregation complete - Time: 145.417µs}
+{[Info] Pass 3 complete - Packages found: 0}
+{[Info] Total unique packages after merging: 76}
+09:34:29 [Info] SBOM generated; found 76 library components (duration 2.534482209s)
+{2026/06/09 09:34:29 [ERR] plugin: stream copy 'stderr' error: stream closed}
+{2026-06-09T09:34:29.242+0200 [DEBUG] plugin.xray-scan-plugin: 2026/06/09 09:34:29 [ERR] plugin: stream copy 'stderr' error: stream closed}
+{2026/06/09 09:34:29 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin4116257775: use of closed network connection}
+{2026-06-09T09:34:29.242+0200 [DEBUG] plugin.xray-scan-plugin: 2026/06/09 09:34:29 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin4116257775: use of closed network connection}
+{2026-06-09T09:34:29.247+0200 [INFO]  plugin: plugin process exited: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin id=38700}
+{2026-06-09T09:34:29.254+0200 [DEBUG] plugin: plugin exited}
+09:34:29 [Debug] Unique library components in SBOM:
+[
+  "cpp://ffmpeg/ffmpeg:n8.1",
+  "go://github.com/jfrog/snippet-detection-test:unknown",
+  "go://stdlib:1.22",
+  "gav://com.jfrog:snippet-detection-test:1.0.0",
+  "gav://org.apache.commons:commons-lang3:3.14.0",
+  "npm://accepts:1.3.8",
+  "npm://array-flatten:1.1.1",
+  "npm://body-parser:1.20.4",
+  "npm://bytes:3.1.2",
+  "npm://call-bind-apply-helpers:1.0.2",
+  "npm://call-bound:1.0.4",
+  "npm://content-disposition:0.5.4",
+  "npm://content-type:1.0.5",
+  "npm://cookie-signature:1.0.7",
+  "npm://cookie:0.7.2",
+  "npm://debug:2.6.9",
+  "npm://depd:2.0.0",
+  "npm://destroy:1.2.0",
+  "npm://dunder-proto:1.0.1",
+  "npm://ee-first:1.1.1",
+  "npm://encodeurl:2.0.0",
+  "npm://es-define-property:1.0.1",
+  "npm://es-errors:1.3.0",
+  "npm://es-object-atoms:1.1.1",
+  "npm://escape-html:1.0.3",
+  "npm://etag:1.8.1",
+  "npm://express:4.22.1",
+  "npm://finalhandler:1.3.2",
+  "npm://forwarded:0.2.0",
+  "npm://fresh:0.5.2",
+  "npm://function-bind:1.1.2",
+  "npm://get-intrinsic:1.3.0",
+  "npm://get-proto:1.0.1",
+  "npm://gopd:1.2.0",
+  "npm://has-symbols:1.1.0",
+  "npm://hasown:2.0.3",
+  "npm://http-errors:2.0.1",
+  "npm://iconv-lite:0.4.24",
+  "npm://inherits:2.0.4",
+  "npm://ipaddr.js:1.9.1",
+  "npm://jfrog-snippet-detection-test:1.0.0",
+  "npm://lodash:4.18.1",
+  "npm://math-intrinsics:1.1.0",
+  "npm://media-typer:0.3.0",
+  "npm://merge-descriptors:1.0.3",
+  "npm://methods:1.1.2",
+  "npm://mime-db:1.52.0",
+  "npm://mime-types:2.1.35",
+  "npm://mime:1.6.0",
+  "npm://ms:2.0.0",
+  "npm://ms:2.1.3",
+  "npm://negotiator:0.6.3",
+  "npm://object-inspect:1.13.4",
+  "npm://on-finished:2.4.1",
+  "npm://parseurl:1.3.3",
+  "npm://path-to-regexp:0.1.13",
+  "npm://proxy-addr:2.0.7",
+  "npm://qs:6.14.2",
+  "npm://range-parser:1.2.1",
+  "npm://raw-body:2.5.3",
+  "npm://safe-buffer:5.2.1",
+  "npm://safer-buffer:2.1.2",
+  "npm://send:0.19.2",
+  "npm://serve-static:1.16.3",
+  "npm://setprototypeof:1.2.0",
+  "npm://side-channel-list:1.0.1",
+  "npm://side-channel-map:1.0.1",
+  "npm://side-channel-weakmap:1.0.2",
+  "npm://side-channel:1.1.0",
+  "npm://statuses:2.0.2",
+  "npm://toidentifier:1.0.1",
+  "npm://type-is:1.6.18",
+  "npm://unpipe:1.0.0",
+  "npm://utils-merge:1.0.1",
+  "npm://vary:1.1.2",
+  "pypi://<root>:unknown"
+]
+
+09:34:29 [Debug] Found multiple roots in the SBOM for target '/Users/rodolphefontaine/jfrog-snippet-detection-test'.
+09:34:29 [Debug] Xray-Lib plugin not found in system PATH: exec: "xray-scan-plugin": executable file not found in $PATH
+09:34:29 [Debug] Using Xray-Lib executable at: /Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin
+{2026-06-09T09:34:29.256+0200 [DEBUG] plugin: starting plugin: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin args=[]}
+{2026-06-09T09:34:29.258+0200 [DEBUG] plugin: plugin started: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin pid=38740}
+{2026-06-09T09:34:29.258+0200 [DEBUG] plugin: waiting for RPC address: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin}
+{{"@level":"debug","@message":"plugin address","@timestamp":"2026-06-09T09:34:29.460115+02:00","address":"/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin173390712","network":"unix"}}
+{2026-06-09T09:34:29.460+0200 [DEBUG] plugin: using plugin: version=1}
+{2026-06-09T09:34:29.460+0200 [DEBUG] plugin.xray-scan-plugin: plugin address: address=/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin173390712 network=unix timestamp="2026-06-09T09:34:29.460+0200"}
+09:34:29 [Info] Generating SBOM...
+09:34:29 [Debug] Environment variables: map[JFROG_XRAY_SNIPPET_SCAN_ENABLE:true]
+09:34:29 [Debug] Scan configuration: {
+  "bom-ref": "file:34112ff146bc49eb35a0ae386c1e0afd",
+  "type": "file",
+  "name": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+  "ignorePatterns": [
+    "*.git*",
+    "*node_modules*",
+    "*target*",
+    "*venv*",
+    "*test*",
+    "dist"
+  ]
+}
+
+{[Info] Logger initialized with level: debug (source: ENV)}
+{[Info] Scan configured with ignore patterns: [*.git* *node_modules* *target* *venv* *test* dist]}
+{[Info] Creating code index client config for url: https://solenglatest.jfrog.io/catalog with token from default jf cli config}
+{[Debug] Using pre-configured feature config for cpp/ast_tracelets}
+{[Debug] NewTraceletFeatureExtractorService: minTraceletSize: 300}
+{[Debug] Using pre-configured feature config for cpp/fuzzy_file_hash}
+{[Debug] PackageContainmentRESTClient: sending GetAllContainment request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/containment/all}
+{[Debug] PackageContainmentRESTClient: received 694 containment relationships}
+{[Info] Fetched 694 containment relationships for cpp}
+{[Debug] Code index extractor created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index extractor created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Info] ═══ Pass 1: Full Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from go.mod with golang}
+{[Debug] [Full Scan] Extracted 1 associations from go.mod}
+{[Debug] extracting from package-lock.json with npm}
+{[Debug] [Full Scan] Extracted 1 associations from package-lock.json}
+{[Debug] extracting from package.json with npm-package-json}
+{[Debug] [Full Scan] Extracted 1 associations from package.json}
+{[Debug] extracting from package_list with nuget}
+{[Debug] error extracting from file package_list with extractor dotnet/pe: the file header does not contain magic bytes %!w(<nil>)}
+{[Debug] extracting from pom.xml with maven}
+{[Debug] [Full Scan] Extracted 1 associations from pom.xml}
+{[Debug] extracting from requirements.txt with pypi}
+{[Debug] extracting from requirements.txt with rootpackage}
+{[Debug] [Full Scan] Extracted 1 associations from requirements.txt}
+{[Info] [Full Scan] Extraction complete - Associations: 5 - Time: 7.44525ms}
+{[Info] [Full Scan] Lookup complete - Time: 459ns; results: 0}
+{[Debug] [Full Scan] Aggregator base-cargo found 0 packages}
+{[Debug] [Full Scan] Aggregator base-conan found 0 packages}
+{[Debug] [Full Scan] Aggregator base-composer found 0 packages}
+{[Debug] [Full Scan] Aggregator base-gem found 0 packages}
+{[Debug] [Full Scan] Aggregator base-golang found 2 packages}
+{[Debug] [Full Scan] Aggregator maven found 2 packages}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package.json}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package-lock.json}
+{[Debug] [Full Scan] Aggregator npm found 71 packages}
+{[Debug] [Full Scan] Aggregator nuget found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pub found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pypi found 1 packages}
+{[Info] [Full Scan] Aggregation complete - Time: 284.75µs}
+{[Info] Pass 1 complete - Packages found: 76}
+{[Info] ═══ Pass 2: Code SCA ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracting from snippets/exact/ffmpeg-avstring.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracted 1 features from snippets/exact/ffmpeg-avstring.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 1 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code SCA] Extraction complete - Associations: 3 - Time: 13.163791ms}
+{[Info] [Code SCA] Running lookup: code-index-lookup-cpp-fuzzy_file_hash}
+{[Debug] Querying with 3 queries - for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-keys with 3 queries (437 bytes, compressed to 232)}
+{[Debug] CodeQueryRESTClient: received 3 results from QueryBatchKeys}
+{[Debug] LookupService: Fetching instances for  3 unique keys}
+{[Debug] CodeQueryRESTClient: sending FetchInstances request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-instances with 3 keys (139 bytes, compressed to 133)}
+{[Debug] CodeQueryRESTClient: received instances for 3 keys from FetchInstances}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  0  from  1  keys}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  2  from  1  keys}
+{[Info] [Code SCA] Lookup complete - Time: 507.929375ms; results: 5}
+{[Info] Decision: aggregating file hash results}
+{[Info] Decision: produced components from file hash matches}
+{[Debug] [Code SCA] Aggregator code-index-aggregator-fuzzy_file_hash-cpp found 1 packages}
+{[Info] [Code SCA] Aggregation complete - Time: 120.167µs}
+{[Info] Pass 2 complete - Packages found: 1}
+{[Info] ═══ Pass 3: Code Snippet Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Found 2 functions in snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Skipping already diagnosed file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] Found 1 functions in snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 0 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code Snippet Scan] Extraction complete - Associations: 2 - Time: 8.882042ms}
+{[Info] [Code Snippet Scan] Running lookup: code-index-lookup-cpp-ast_tracelets}
+{[Debug] Querying with 1 queries - for ecosystem cpp and feature name ast_tracelets}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/query-keys with 1 queries (2206 bytes, compressed to 820)}
+{[Debug] CodeQueryRESTClient: received 1 results from QueryBatchKeys}
+{[Debug] LookupService: No keys found, returning empty results}
+{[Info] [Code Snippet Scan] Lookup complete - Time: 452.653667ms; results: 0}
+{[Info] Decision: aggregating results over functions}
+{[Info] Decision: produced components}
+{[Debug] [Code Snippet Scan] Aggregator code-index-aggregator-tracelets-cpp found 0 packages}
+{[Info] [Code Snippet Scan] Aggregation complete - Time: 90.791µs}
+{[Info] Pass 3 complete - Packages found: 0}
+{[Info] Total unique packages after merging: 76}
+09:34:31 [Info] SBOM generated; found 76 library components (duration 2.051900333s)
+{2026/06/09 09:34:31 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin173390712: use of closed network connection}
+{2026-06-09T09:34:31.309+0200 [DEBUG] plugin.xray-scan-plugin: 2026/06/09 09:34:31 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin173390712: use of closed network connection}
+{2026-06-09T09:34:31.313+0200 [INFO]  plugin: plugin process exited: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin id=38740}
+{2026-06-09T09:34:31.318+0200 [DEBUG] plugin: plugin exited}
+09:34:31 [Debug] Unique library components in SBOM:
+[
+  "cpp://ffmpeg/ffmpeg:n8.1",
+  "go://github.com/jfrog/snippet-detection-test:unknown",
+  "go://stdlib:1.22",
+  "gav://com.jfrog:snippet-detection-test:1.0.0",
+  "gav://org.apache.commons:commons-lang3:3.14.0",
+  "npm://accepts:1.3.8",
+  "npm://array-flatten:1.1.1",
+  "npm://body-parser:1.20.4",
+  "npm://bytes:3.1.2",
+  "npm://call-bind-apply-helpers:1.0.2",
+  "npm://call-bound:1.0.4",
+  "npm://content-disposition:0.5.4",
+  "npm://content-type:1.0.5",
+  "npm://cookie-signature:1.0.7",
+  "npm://cookie:0.7.2",
+  "npm://debug:2.6.9",
+  "npm://depd:2.0.0",
+  "npm://destroy:1.2.0",
+  "npm://dunder-proto:1.0.1",
+  "npm://ee-first:1.1.1",
+  "npm://encodeurl:2.0.0",
+  "npm://es-define-property:1.0.1",
+  "npm://es-errors:1.3.0",
+  "npm://es-object-atoms:1.1.1",
+  "npm://escape-html:1.0.3",
+  "npm://etag:1.8.1",
+  "npm://express:4.22.1",
+  "npm://finalhandler:1.3.2",
+  "npm://forwarded:0.2.0",
+  "npm://fresh:0.5.2",
+  "npm://function-bind:1.1.2",
+  "npm://get-intrinsic:1.3.0",
+  "npm://get-proto:1.0.1",
+  "npm://gopd:1.2.0",
+  "npm://has-symbols:1.1.0",
+  "npm://hasown:2.0.3",
+  "npm://http-errors:2.0.1",
+  "npm://iconv-lite:0.4.24",
+  "npm://inherits:2.0.4",
+  "npm://ipaddr.js:1.9.1",
+  "npm://jfrog-snippet-detection-test:1.0.0",
+  "npm://lodash:4.18.1",
+  "npm://math-intrinsics:1.1.0",
+  "npm://media-typer:0.3.0",
+  "npm://merge-descriptors:1.0.3",
+  "npm://methods:1.1.2",
+  "npm://mime-db:1.52.0",
+  "npm://mime-types:2.1.35",
+  "npm://mime:1.6.0",
+  "npm://ms:2.0.0",
+  "npm://ms:2.1.3",
+  "npm://negotiator:0.6.3",
+  "npm://object-inspect:1.13.4",
+  "npm://on-finished:2.4.1",
+  "npm://parseurl:1.3.3",
+  "npm://path-to-regexp:0.1.13",
+  "npm://proxy-addr:2.0.7",
+  "npm://qs:6.14.2",
+  "npm://range-parser:1.2.1",
+  "npm://raw-body:2.5.3",
+  "npm://safe-buffer:5.2.1",
+  "npm://safer-buffer:2.1.2",
+  "npm://send:0.19.2",
+  "npm://serve-static:1.16.3",
+  "npm://setprototypeof:1.2.0",
+  "npm://side-channel-list:1.0.1",
+  "npm://side-channel-map:1.0.1",
+  "npm://side-channel-weakmap:1.0.2",
+  "npm://side-channel:1.1.0",
+  "npm://statuses:2.0.2",
+  "npm://toidentifier:1.0.1",
+  "npm://type-is:1.6.18",
+  "npm://unpipe:1.0.0",
+  "npm://utils-merge:1.0.1",
+  "npm://vary:1.1.2",
+  "pypi://<root>:unknown"
+]
+
+09:34:31 [Debug] Found multiple roots in the SBOM for target '/Users/rodolphefontaine/jfrog-snippet-detection-test'.
+09:34:31 [Debug] Xray-Lib plugin not found in system PATH: exec: "xray-scan-plugin": executable file not found in $PATH
+09:34:31 [Debug] Using Xray-Lib executable at: /Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin
+{2026-06-09T09:34:31.319+0200 [DEBUG] plugin: starting plugin: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin args=[]}
+{2026-06-09T09:34:31.321+0200 [DEBUG] plugin: plugin started: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin pid=38781}
+{2026-06-09T09:34:31.321+0200 [DEBUG] plugin: waiting for RPC address: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin}
+{{"@level":"debug","@message":"plugin address","@timestamp":"2026-06-09T09:34:31.521919+02:00","address":"/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2021047041","network":"unix"}}
+{2026-06-09T09:34:31.522+0200 [DEBUG] plugin: using plugin: version=1}
+{2026-06-09T09:34:31.522+0200 [DEBUG] plugin.xray-scan-plugin: plugin address: address=/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2021047041 network=unix timestamp="2026-06-09T09:34:31.521+0200"}
+09:34:31 [Info] Generating SBOM...
+09:34:31 [Debug] Environment variables: map[JFROG_XRAY_SNIPPET_SCAN_ENABLE:true]
+09:34:31 [Debug] Scan configuration: {
+  "bom-ref": "file:34112ff146bc49eb35a0ae386c1e0afd",
+  "type": "file",
+  "name": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+  "ignorePatterns": [
+    "*.git*",
+    "*node_modules*",
+    "*target*",
+    "*venv*",
+    "*test*",
+    "dist"
+  ]
+}
+
+{[Info] Logger initialized with level: debug (source: ENV)}
+{[Info] Scan configured with ignore patterns: [*.git* *node_modules* *target* *venv* *test* dist]}
+{[Info] Creating code index client config for url: https://solenglatest.jfrog.io/catalog with token from default jf cli config}
+{[Debug] Using pre-configured feature config for cpp/ast_tracelets}
+{[Debug] NewTraceletFeatureExtractorService: minTraceletSize: 300}
+{[Debug] Using pre-configured feature config for cpp/fuzzy_file_hash}
+{[Debug] PackageContainmentRESTClient: sending GetAllContainment request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/containment/all}
+{[Debug] PackageContainmentRESTClient: received 694 containment relationships}
+{[Info] Fetched 694 containment relationships for cpp}
+{[Debug] Code index extractor created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index extractor created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Info] ═══ Pass 1: Full Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from go.mod with golang}
+{[Debug] [Full Scan] Extracted 1 associations from go.mod}
+{[Debug] extracting from package-lock.json with npm}
+{[Debug] [Full Scan] Extracted 1 associations from package-lock.json}
+{[Debug] extracting from package.json with npm-package-json}
+{[Debug] [Full Scan] Extracted 1 associations from package.json}
+{[Debug] extracting from package_list with nuget}
+{[Debug] error extracting from file package_list with extractor dotnet/pe: the file header does not contain magic bytes %!w(<nil>)}
+{[Debug] extracting from pom.xml with maven}
+{[Debug] [Full Scan] Extracted 1 associations from pom.xml}
+{[Debug] extracting from requirements.txt with pypi}
+{[Debug] extracting from requirements.txt with rootpackage}
+{[Debug] [Full Scan] Extracted 1 associations from requirements.txt}
+{[Info] [Full Scan] Extraction complete - Associations: 5 - Time: 8.400208ms}
+{[Info] [Full Scan] Lookup complete - Time: 583ns; results: 0}
+{[Debug] [Full Scan] Aggregator base-cargo found 0 packages}
+{[Debug] [Full Scan] Aggregator base-conan found 0 packages}
+{[Debug] [Full Scan] Aggregator base-composer found 0 packages}
+{[Debug] [Full Scan] Aggregator base-gem found 0 packages}
+{[Debug] [Full Scan] Aggregator base-golang found 2 packages}
+{[Debug] [Full Scan] Aggregator maven found 2 packages}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package-lock.json}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package.json}
+{[Debug] [Full Scan] Aggregator npm found 71 packages}
+{[Debug] [Full Scan] Aggregator nuget found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pub found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pypi found 1 packages}
+{[Info] [Full Scan] Aggregation complete - Time: 294.291µs}
+{[Info] Pass 1 complete - Packages found: 76}
+{[Info] ═══ Pass 2: Code SCA ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracting from snippets/exact/ffmpeg-avstring.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracted 1 features from snippets/exact/ffmpeg-avstring.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 1 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code SCA] Extraction complete - Associations: 3 - Time: 13.814042ms}
+{[Info] [Code SCA] Running lookup: code-index-lookup-cpp-fuzzy_file_hash}
+{[Debug] Querying with 3 queries - for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-keys with 3 queries (437 bytes, compressed to 232)}
+{[Debug] CodeQueryRESTClient: received 3 results from QueryBatchKeys}
+{[Debug] LookupService: Fetching instances for  3 unique keys}
+{[Debug] CodeQueryRESTClient: sending FetchInstances request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-instances with 3 keys (139 bytes, compressed to 133)}
+{[Debug] CodeQueryRESTClient: received instances for 3 keys from FetchInstances}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  0  from  1  keys}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  2  from  1  keys}
+{[Info] [Code SCA] Lookup complete - Time: 737.627833ms; results: 5}
+{[Info] Decision: aggregating file hash results}
+{[Info] Decision: produced components from file hash matches}
+{[Debug] [Code SCA] Aggregator code-index-aggregator-fuzzy_file_hash-cpp found 1 packages}
+{[Info] [Code SCA] Aggregation complete - Time: 95.084µs}
+{[Info] Pass 2 complete - Packages found: 1}
+{[Info] ═══ Pass 3: Code Snippet Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Found 2 functions in snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Skipping already diagnosed file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] Found 1 functions in snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 0 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code Snippet Scan] Extraction complete - Associations: 2 - Time: 8.624958ms}
+{[Info] [Code Snippet Scan] Running lookup: code-index-lookup-cpp-ast_tracelets}
+{[Debug] Querying with 1 queries - for ecosystem cpp and feature name ast_tracelets}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/query-keys with 1 queries (2206 bytes, compressed to 820)}
+{[Debug] CodeQueryRESTClient: received 1 results from QueryBatchKeys}
+{[Debug] LookupService: No keys found, returning empty results}
+{[Info] [Code Snippet Scan] Lookup complete - Time: 246.245167ms; results: 0}
+{[Info] Decision: aggregating results over functions}
+{[Info] Decision: produced components}
+{[Debug] [Code Snippet Scan] Aggregator code-index-aggregator-tracelets-cpp found 0 packages}
+{[Info] [Code Snippet Scan] Aggregation complete - Time: 119.916µs}
+{[Info] Pass 3 complete - Packages found: 0}
+{[Info] Total unique packages after merging: 76}
+09:34:33 [Info] SBOM generated; found 76 library components (duration 2.084598334s)
+{2026/06/09 09:34:33 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2021047041: use of closed network connection}
+{2026-06-09T09:34:33.405+0200 [DEBUG] plugin.xray-scan-plugin: 2026/06/09 09:34:33 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2021047041: use of closed network connection}
+{2026-06-09T09:34:33.410+0200 [INFO]  plugin: plugin process exited: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin id=38781}
+{2026-06-09T09:34:33.415+0200 [DEBUG] plugin: plugin exited}
+09:34:33 [Debug] Unique library components in SBOM:
+[
+  "cpp://ffmpeg/ffmpeg:n8.1",
+  "go://github.com/jfrog/snippet-detection-test:unknown",
+  "go://stdlib:1.22",
+  "gav://com.jfrog:snippet-detection-test:1.0.0",
+  "gav://org.apache.commons:commons-lang3:3.14.0",
+  "npm://accepts:1.3.8",
+  "npm://array-flatten:1.1.1",
+  "npm://body-parser:1.20.4",
+  "npm://bytes:3.1.2",
+  "npm://call-bind-apply-helpers:1.0.2",
+  "npm://call-bound:1.0.4",
+  "npm://content-disposition:0.5.4",
+  "npm://content-type:1.0.5",
+  "npm://cookie-signature:1.0.7",
+  "npm://cookie:0.7.2",
+  "npm://debug:2.6.9",
+  "npm://depd:2.0.0",
+  "npm://destroy:1.2.0",
+  "npm://dunder-proto:1.0.1",
+  "npm://ee-first:1.1.1",
+  "npm://encodeurl:2.0.0",
+  "npm://es-define-property:1.0.1",
+  "npm://es-errors:1.3.0",
+  "npm://es-object-atoms:1.1.1",
+  "npm://escape-html:1.0.3",
+  "npm://etag:1.8.1",
+  "npm://express:4.22.1",
+  "npm://finalhandler:1.3.2",
+  "npm://forwarded:0.2.0",
+  "npm://fresh:0.5.2",
+  "npm://function-bind:1.1.2",
+  "npm://get-intrinsic:1.3.0",
+  "npm://get-proto:1.0.1",
+  "npm://gopd:1.2.0",
+  "npm://has-symbols:1.1.0",
+  "npm://hasown:2.0.3",
+  "npm://http-errors:2.0.1",
+  "npm://iconv-lite:0.4.24",
+  "npm://inherits:2.0.4",
+  "npm://ipaddr.js:1.9.1",
+  "npm://jfrog-snippet-detection-test:1.0.0",
+  "npm://lodash:4.18.1",
+  "npm://math-intrinsics:1.1.0",
+  "npm://media-typer:0.3.0",
+  "npm://merge-descriptors:1.0.3",
+  "npm://methods:1.1.2",
+  "npm://mime-db:1.52.0",
+  "npm://mime-types:2.1.35",
+  "npm://mime:1.6.0",
+  "npm://ms:2.0.0",
+  "npm://ms:2.1.3",
+  "npm://negotiator:0.6.3",
+  "npm://object-inspect:1.13.4",
+  "npm://on-finished:2.4.1",
+  "npm://parseurl:1.3.3",
+  "npm://path-to-regexp:0.1.13",
+  "npm://proxy-addr:2.0.7",
+  "npm://qs:6.14.2",
+  "npm://range-parser:1.2.1",
+  "npm://raw-body:2.5.3",
+  "npm://safe-buffer:5.2.1",
+  "npm://safer-buffer:2.1.2",
+  "npm://send:0.19.2",
+  "npm://serve-static:1.16.3",
+  "npm://setprototypeof:1.2.0",
+  "npm://side-channel-list:1.0.1",
+  "npm://side-channel-map:1.0.1",
+  "npm://side-channel-weakmap:1.0.2",
+  "npm://side-channel:1.1.0",
+  "npm://statuses:2.0.2",
+  "npm://toidentifier:1.0.1",
+  "npm://type-is:1.6.18",
+  "npm://unpipe:1.0.0",
+  "npm://utils-merge:1.0.1",
+  "npm://vary:1.1.2",
+  "pypi://<root>:unknown"
+]
+
+09:34:33 [Debug] Found multiple roots in the SBOM for target '/Users/rodolphefontaine/jfrog-snippet-detection-test'.
+09:34:33 [Debug] Xray-Lib plugin not found in system PATH: exec: "xray-scan-plugin": executable file not found in $PATH
+09:34:33 [Debug] Using Xray-Lib executable at: /Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin
+{2026-06-09T09:34:33.416+0200 [DEBUG] plugin: starting plugin: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin args=[]}
+{2026-06-09T09:34:33.417+0200 [DEBUG] plugin: plugin started: path=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin pid=38808}
+{2026-06-09T09:34:33.417+0200 [DEBUG] plugin: waiting for RPC address: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin}
+{{"@level":"debug","@message":"plugin address","@timestamp":"2026-06-09T09:34:33.619933+02:00","address":"/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2931936809","network":"unix"}}
+{2026-06-09T09:34:33.620+0200 [DEBUG] plugin: using plugin: version=1}
+{2026-06-09T09:34:33.620+0200 [DEBUG] plugin.xray-scan-plugin: plugin address: address=/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2931936809 network=unix timestamp="2026-06-09T09:34:33.619+0200"}
+09:34:33 [Info] Generating SBOM...
+09:34:33 [Debug] Environment variables: map[JFROG_XRAY_SNIPPET_SCAN_ENABLE:true]
+09:34:33 [Debug] Scan configuration: {
+  "bom-ref": "file:34112ff146bc49eb35a0ae386c1e0afd",
+  "type": "file",
+  "name": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+  "ignorePatterns": [
+    "*.git*",
+    "*node_modules*",
+    "*target*",
+    "*venv*",
+    "*test*",
+    "dist"
+  ]
+}
+
+{[Info] Logger initialized with level: debug (source: ENV)}
+{[Info] Scan configured with ignore patterns: [*.git* *node_modules* *target* *venv* *test* dist]}
+{[Info] Creating code index client config for url: https://solenglatest.jfrog.io/catalog with token from default jf cli config}
+{[Debug] Using pre-configured feature config for cpp/ast_tracelets}
+{[Debug] NewTraceletFeatureExtractorService: minTraceletSize: 300}
+{[Debug] Using pre-configured feature config for cpp/fuzzy_file_hash}
+{[Debug] PackageContainmentRESTClient: sending GetAllContainment request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/containment/all}
+{[Debug] PackageContainmentRESTClient: received 694 containment relationships}
+{[Info] Fetched 694 containment relationships for cpp}
+{[Debug] Code index extractor created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name ast_tracelets}
+{[Debug] Code index extractor created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index lookup service created for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Debug] Code index aggregator service created for ecosystem cpp}
+{[Info] ═══ Pass 1: Full Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from go.mod with golang}
+{[Debug] [Full Scan] Extracted 1 associations from go.mod}
+{[Debug] extracting from package-lock.json with npm}
+{[Debug] [Full Scan] Extracted 1 associations from package-lock.json}
+{[Debug] extracting from package.json with npm-package-json}
+{[Debug] [Full Scan] Extracted 1 associations from package.json}
+{[Debug] extracting from package_list with nuget}
+{[Debug] error extracting from file package_list with extractor dotnet/pe: the file header does not contain magic bytes %!w(<nil>)}
+{[Debug] extracting from pom.xml with maven}
+{[Debug] [Full Scan] Extracted 1 associations from pom.xml}
+{[Debug] extracting from requirements.txt with pypi}
+{[Debug] extracting from requirements.txt with rootpackage}
+{[Debug] [Full Scan] Extracted 1 associations from requirements.txt}
+{[Info] [Full Scan] Extraction complete - Associations: 5 - Time: 7.686125ms}
+{[Info] [Full Scan] Lookup complete - Time: 875ns; results: 0}
+{[Debug] [Full Scan] Aggregator base-cargo found 0 packages}
+{[Debug] [Full Scan] Aggregator base-conan found 0 packages}
+{[Debug] [Full Scan] Aggregator base-composer found 0 packages}
+{[Debug] [Full Scan] Aggregator base-gem found 0 packages}
+{[Debug] [Full Scan] Aggregator base-golang found 2 packages}
+{[Debug] [Full Scan] Aggregator maven found 2 packages}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package-lock.json}
+{[Debug] Created root package occurrence:pkg:npm/jfrog-snippet-detection-test@1.0.0?hash=5058f1af for assocication:package.json}
+{[Debug] [Full Scan] Aggregator npm found 71 packages}
+{[Debug] [Full Scan] Aggregator nuget found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pub found 0 packages}
+{[Debug] [Full Scan] Aggregator base-pypi found 1 packages}
+{[Info] [Full Scan] Aggregation complete - Time: 538.542µs}
+{[Info] Pass 1 complete - Packages found: 76}
+{[Info] ═══ Pass 2: Code SCA ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracting from snippets/exact/ffmpeg-avstring.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracted 1 features from snippets/exact/ffmpeg-avstring.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-fuzzy_file_hash}
+{[Debug] Processing source: snippets/exact}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 1 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code SCA] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code SCA] Extraction complete - Associations: 3 - Time: 13.183958ms}
+{[Info] [Code SCA] Running lookup: code-index-lookup-cpp-fuzzy_file_hash}
+{[Debug] Querying with 3 queries - for ecosystem cpp and feature name fuzzy_file_hash}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-keys with 3 queries (437 bytes, compressed to 232)}
+{[Debug] CodeQueryRESTClient: received 3 results from QueryBatchKeys}
+{[Debug] LookupService: Fetching instances for  3 unique keys}
+{[Debug] CodeQueryRESTClient: sending FetchInstances request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/fuzzy_file_hash/query-instances with 3 keys (139 bytes, compressed to 133)}
+{[Debug] CodeQueryRESTClient: received instances for 3 keys from FetchInstances}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  0  from  1  keys}
+{[Debug] LookupService: Filtered to  0  keys ( 50  unique repos) for query  2  from  1  keys}
+{[Info] [Code SCA] Lookup complete - Time: 778.557625ms; results: 5}
+{[Info] Decision: aggregating file hash results}
+{[Info] Decision: produced components from file hash matches}
+{[Debug] [Code SCA] Aggregator code-index-aggregator-fuzzy_file_hash-cpp found 1 packages}
+{[Info] [Code SCA] Aggregation complete - Time: 116.125µs}
+{[Info] Pass 2 complete - Packages found: 1}
+{[Info] ═══ Pass 3: Code Snippet Scan ═══}
+{[Debug] skipping directory: path:.cursor}
+{[Debug] skipping directory: path:.git}
+{[Debug] skipping directory: path:.github}
+{[Debug] skipping file: path:.gitignore}
+{[Debug] skipping directory: path:.vscode}
+{[Debug] skipping directory: path:node_modules}
+{[Debug] skipping file: path:snippets/pr-incoming/.gitkeep}
+{[Debug] skipping file: path:src/lib/debounce.test.js}
+{[Debug] skipping file: path:src/lib/levenshtein.test.js}
+{[Debug] skipping directory: path:target}
+{[Debug] extracting from snippets/exact/agpl-ghostscript-path.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Found 2 functions in snippets/exact/agpl-ghostscript-path.c}
+{[Debug] extracted 1 features from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/agpl-ghostscript-path.c}
+{[Debug] Skipping already diagnosed file: snippets/exact/ffmpeg-avstring.c}
+{[Debug] extracting from snippets/exact/gpl-coreutils-basename.c with code-index-extractor-cpp-ast_tracelets}
+{[Debug] Reading file: snippets/exact/gpl-coreutils-basename.c}
+{[Debug] Found 1 functions in snippets/exact/gpl-coreutils-basename.c}
+{[Debug] extracted 0 features from snippets/exact/gpl-coreutils-basename.c}
+{[Debug] [Code Snippet Scan] Extracted 1 associations from snippets/exact/gpl-coreutils-basename.c}
+{[Info] [Code Snippet Scan] Extraction complete - Associations: 2 - Time: 9.292583ms}
+{[Info] [Code Snippet Scan] Running lookup: code-index-lookup-cpp-ast_tracelets}
+{[Debug] Querying with 1 queries - for ecosystem cpp and feature name ast_tracelets}
+{[Debug] CodeQueryRESTClient: sending QueryBatchKeys request to https://solenglatest.jfrog.io/catalog/api/v1/code_index/cpp/ast_tracelets/query-keys with 1 queries (2206 bytes, compressed to 820)}
+{[Debug] CodeQueryRESTClient: received 1 results from QueryBatchKeys}
+{[Debug] LookupService: No keys found, returning empty results}
+{[Info] [Code Snippet Scan] Lookup complete - Time: 257.409625ms; results: 0}
+{[Info] Decision: aggregating results over functions}
+{[Info] Decision: produced components}
+{[Debug] [Code Snippet Scan] Aggregator code-index-aggregator-tracelets-cpp found 0 packages}
+{[Info] [Code Snippet Scan] Aggregation complete - Time: 84.75µs}
+{[Info] Pass 3 complete - Packages found: 0}
+{[Info] Total unique packages after merging: 76}
+09:34:35 [Info] SBOM generated; found 76 library components (duration 2.342144625s)
+{2026/06/09 09:34:35 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2931936809: use of closed network connection}
+{2026-06-09T09:34:35.758+0200 [DEBUG] plugin.xray-scan-plugin: 2026/06/09 09:34:35 [DEBUG] plugin: plugin server: accept unix /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/plugin2931936809: use of closed network connection}
+{2026-06-09T09:34:35.763+0200 [INFO]  plugin: plugin process exited: plugin=/Users/rodolphefontaine/.jfrog/dependencies/xray-scan-plugin/xray-scan-lib-1.3.0-darwin-arm64/xray-scan-plugin id=38808}
+{2026-06-09T09:34:35.768+0200 [DEBUG] plugin: plugin exited}
+09:34:35 [Debug] Unique library components in SBOM:
+[
+  "cpp://ffmpeg/ffmpeg:n8.1",
+  "go://github.com/jfrog/snippet-detection-test:unknown",
+  "go://stdlib:1.22",
+  "gav://com.jfrog:snippet-detection-test:1.0.0",
+  "gav://org.apache.commons:commons-lang3:3.14.0",
+  "npm://accepts:1.3.8",
+  "npm://array-flatten:1.1.1",
+  "npm://body-parser:1.20.4",
+  "npm://bytes:3.1.2",
+  "npm://call-bind-apply-helpers:1.0.2",
+  "npm://call-bound:1.0.4",
+  "npm://content-disposition:0.5.4",
+  "npm://content-type:1.0.5",
+  "npm://cookie-signature:1.0.7",
+  "npm://cookie:0.7.2",
+  "npm://debug:2.6.9",
+  "npm://depd:2.0.0",
+  "npm://destroy:1.2.0",
+  "npm://dunder-proto:1.0.1",
+  "npm://ee-first:1.1.1",
+  "npm://encodeurl:2.0.0",
+  "npm://es-define-property:1.0.1",
+  "npm://es-errors:1.3.0",
+  "npm://es-object-atoms:1.1.1",
+  "npm://escape-html:1.0.3",
+  "npm://etag:1.8.1",
+  "npm://express:4.22.1",
+  "npm://finalhandler:1.3.2",
+  "npm://forwarded:0.2.0",
+  "npm://fresh:0.5.2",
+  "npm://function-bind:1.1.2",
+  "npm://get-intrinsic:1.3.0",
+  "npm://get-proto:1.0.1",
+  "npm://gopd:1.2.0",
+  "npm://has-symbols:1.1.0",
+  "npm://hasown:2.0.3",
+  "npm://http-errors:2.0.1",
+  "npm://iconv-lite:0.4.24",
+  "npm://inherits:2.0.4",
+  "npm://ipaddr.js:1.9.1",
+  "npm://jfrog-snippet-detection-test:1.0.0",
+  "npm://lodash:4.18.1",
+  "npm://math-intrinsics:1.1.0",
+  "npm://media-typer:0.3.0",
+  "npm://merge-descriptors:1.0.3",
+  "npm://methods:1.1.2",
+  "npm://mime-db:1.52.0",
+  "npm://mime-types:2.1.35",
+  "npm://mime:1.6.0",
+  "npm://ms:2.0.0",
+  "npm://ms:2.1.3",
+  "npm://negotiator:0.6.3",
+  "npm://object-inspect:1.13.4",
+  "npm://on-finished:2.4.1",
+  "npm://parseurl:1.3.3",
+  "npm://path-to-regexp:0.1.13",
+  "npm://proxy-addr:2.0.7",
+  "npm://qs:6.14.2",
+  "npm://range-parser:1.2.1",
+  "npm://raw-body:2.5.3",
+  "npm://safe-buffer:5.2.1",
+  "npm://safer-buffer:2.1.2",
+  "npm://send:0.19.2",
+  "npm://serve-static:1.16.3",
+  "npm://setprototypeof:1.2.0",
+  "npm://side-channel-list:1.0.1",
+  "npm://side-channel-map:1.0.1",
+  "npm://side-channel-weakmap:1.0.2",
+  "npm://side-channel:1.1.0",
+  "npm://statuses:2.0.2",
+  "npm://toidentifier:1.0.1",
+  "npm://type-is:1.6.18",
+  "npm://unpipe:1.0.0",
+  "npm://utils-merge:1.0.1",
+  "npm://vary:1.1.2",
+  "pypi://<root>:unknown"
+]
+
+09:34:35 [Debug] Found multiple roots in the SBOM for target '/Users/rodolphefontaine/jfrog-snippet-detection-test'.
+09:34:35 [Info] Performing scans on 4 targets:
+[
+  {
+    "target": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+    "technology": "pip"
+  },
+  {
+    "target": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+    "technology": "maven"
+  },
+  {
+    "target": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+    "technology": "go"
+  },
+  {
+    "target": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+    "technology": "npm"
+  }
+]
+09:34:35 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/catalog/api/v1/system/version
+09:34:36 [Debug] Catalog version: 1.39.5
+09:34:36 [Debug] [Thread 0] Found 6 dependency entries in /Users/rodolphefontaine/jfrog-snippet-detection-test target, SCA scan will be performed
+09:34:36 [Debug] [Thread 0] Found 6 dependency entries in /Users/rodolphefontaine/jfrog-snippet-detection-test target, SCA scan will be performed
+09:34:36 [Debug] [Thread 0] Found 6 dependency entries in /Users/rodolphefontaine/jfrog-snippet-detection-test target, SCA scan will be performed
+09:34:36 [Debug] [Thread 0] Found 6 dependency entries in /Users/rodolphefontaine/jfrog-snippet-detection-test target, SCA scan will be performed
+09:34:36 [Debug] JFROG_CLI_RELEASES_REPO is not set
+09:34:36 [Info] [Thread 0] Running SCA scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:36 [Debug] 'JFROG_CLI_RELEASES_REPO' environment variable is not configured. The Analyzer Manager will be downloaded directly from releases.jfrog.io if needed.
+09:34:36 [Debug] Sending HTTP HEAD request to: https://releases.jfrog.io/artifactory/xsc-gen-exe-analyzer-manager-local/v1/1.33.0/mac-arm64/analyzerManager.zip
+09:34:36 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/catalog/api/v1/beta/cyclonedx/enrich
+09:34:36 [Debug] Artifactory response: 200 
+09:34:36 [Debug] [Thread 2] Using analyzer manager executable at: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager
+09:34:36 [Debug] No targets to compare in results for target ''
+09:34:36 [Debug] Skipping secrets scan as requested by input...
+09:34:36 [Debug] Skipping iac scan as requested by input...
+09:34:36 [Debug] Skipping sast scan as requested by input...
+09:34:36 [Debug] No targets to compare in results for target ''
+09:34:36 [Debug] Skipping secrets scan as requested by input...
+09:34:36 [Debug] Skipping iac scan as requested by input...
+09:34:36 [Debug] Skipping sast scan as requested by input...
+09:34:36 [Debug] No targets to compare in results for target ''
+09:34:36 [Debug] Skipping secrets scan as requested by input...
+09:34:36 [Debug] Skipping iac scan as requested by input...
+09:34:36 [Debug] Skipping sast scan as requested by input...
+09:34:36 [Debug] No targets to compare in results for target ''
+09:34:36 [Debug] Skipping secrets scan as requested by input...
+09:34:36 [Debug] Skipping iac scan as requested by input...
+09:34:36 [Debug] Skipping sast scan as requested by input...
+09:34:37 [Debug] SBOM enrichment completed successfully
+09:34:37 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/xray/api/v1/cveRemediationCDX
+09:34:38 [Debug] SBOM remediation enrichment completed successfully
+09:34:38 [Info] [Thread 0] Found 2 SCA vulnerabilities (duration 2.263032791s)
+09:34:38 [Info] [Thread 0] Running SCA scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:38 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/catalog/api/v1/beta/cyclonedx/enrich
+09:34:39 [Debug] SBOM enrichment completed successfully
+09:34:39 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/xray/api/v1/cveRemediationCDX
+09:34:40 [Debug] SBOM remediation enrichment completed successfully
+09:34:40 [Info] [Thread 0] Found 2 SCA vulnerabilities (duration 2.246611959s)
+09:34:40 [Info] [Thread 1] Running SCA scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:40 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/catalog/api/v1/beta/cyclonedx/enrich
+09:34:42 [Debug] SBOM enrichment completed successfully
+09:34:42 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/xray/api/v1/cveRemediationCDX
+09:34:43 [Debug] SBOM remediation enrichment completed successfully
+09:34:43 [Info] [Thread 1] Found 2 SCA vulnerabilities (duration 2.504274583s)
+09:34:43 [Info] [Thread 2] Running SCA scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:43 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/catalog/api/v1/beta/cyclonedx/enrich
+09:34:44 [Debug] SBOM enrichment completed successfully
+09:34:44 [Debug] Sending HTTP POST request to: https://solenglatest.jfrog.io/xray/api/v1/cveRemediationCDX
+09:34:46 [Debug] SBOM remediation enrichment completed successfully
+09:34:46 [Info] [Thread 2] Found 2 SCA vulnerabilities (duration 2.60774325s)
+09:34:46 [Info] [Thread 0] Running Contextual Analysis scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:46 [Info] [Thread 1] Running Contextual Analysis scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:46 [Info] [Thread 2] Running Contextual Analysis scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:46 [Debug] Applicability scanner input YAML:
+scans:
+    - roots:
+        - /Users/rodolphefontaine/jfrog-snippet-detection-test
+      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/results.sarif
+      type: analyze-applicability
+      grep-disable: false
+      cve-whitelist:
+        - CVE-2025-48924
+      indirect-cve-whitelist:
+        - CVE-2026-8723
+      skipped-folders:
+        - '**/*.git*/**'
+        - '**/*node_modules*/**'
+        - '**/*target*/**'
+        - '**/*venv*/**'
+        - '**/*test*/**'
+        - '**/dist/**'
+      scantype: ""
+
+09:34:46 [Debug] Applicability scanner input YAML:
+scans:
+    - roots:
+        - /Users/rodolphefontaine/jfrog-snippet-detection-test
+      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/results.sarif
+      type: analyze-applicability
+      grep-disable: false
+      cve-whitelist:
+        - CVE-2025-48924
+      indirect-cve-whitelist:
+        - CVE-2026-8723
+      skipped-folders:
+        - '**/*.git*/**'
+        - '**/*node_modules*/**'
+        - '**/*target*/**'
+        - '**/*venv*/**'
+        - '**/*test*/**'
+        - '**/dist/**'
+      scantype: ""
+
+09:34:46 [Debug] Applicability scanner input YAML:
+scans:
+    - roots:
+        - /Users/rodolphefontaine/jfrog-snippet-detection-test
+      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/results.sarif
+      type: analyze-applicability
+      grep-disable: false
+      cve-whitelist:
+        - CVE-2025-48924
+      indirect-cve-whitelist:
+        - CVE-2026-8723
+      skipped-folders:
+        - '**/*venv*/**'
+        - '**/*test*/**'
+        - '**/dist/**'
+        - '**/*.git*/**'
+        - '**/*node_modules*/**'
+        - '**/*target*/**'
+      scantype: ""
+
+09:34:46 [Debug] Executing /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/config.yaml 491b2e6a-e784-4f2c-82d5-437bf3c41313
+09:34:46 [Debug] Executing /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/config.yaml 491b2e6a-e784-4f2c-82d5-437bf3c41313
+09:34:46 [Debug] Executing /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/config.yaml 491b2e6a-e784-4f2c-82d5-437bf3c41313
+09:34:55 [Debug] /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager "/Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/config.yaml" output: {"level":"debug","msg":"jfrog home directory not found","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"analyzer manager version: 1.33.0","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running os: darwin","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running architecture: arm64","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"jas scanner version: JAS_SCANNERv1.0.0.0,analyzers:b6e36a557e45003f735b48dd01e45ccb8005990d,binary_analysis:6703c305e8ddf57e40367b6a0298503a861609c1,foundation:095074069f162fdd05d386d88d55651e5c0fb5ff,gadgets:d68187d4a95fce8762834411702b6ed3b4ef1c20,go_extractor:08c042594b998a772866f0b4a73a3e480928f287,jas_shift_left:dad76ed516aadbef977befe1a76f42fa4fdf8c70,jas_shift_left_tag:no-tag\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"iac scanner version: TFSCANNER-0.4\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"sast scanner version: USAF version: 0.8.84; rules: c478f5089575be42c5d199e5e042b322b053d246\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"started executing analyzerManager","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"user request is valid with the following parameters: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/config.yaml ","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"configuration file content: scans:\n    - roots:\n        - /Users/rodolphefontaine/jfrog-snippet-detection-test\n      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/results.sarif\n      type: analyze-applicability\n      grep-disable: false\n      cve-whitelist:\n        - CVE-2025-48924\n      indirect-cve-whitelist:\n        - CVE-2026-8723\n      skipped-folders:\n        - '**/*.git*/**'\n        - '**/*node_modules*/**'\n        - '**/*target*/**'\n        - '**/*venv*/**'\n        - '**/*test*/**'\n        - '**/dist/**'\n      scantype: \"\"\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xsc version with the minimal version that supports xsc flow.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"dummy mode enabled - forcing Xray flow for entitlements","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"running xsc flow mode: false","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"finished send entitlement request","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray entitlements response: true","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using iac binary located in: iac_scanner/tf_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using zd binary located in: zd_scanner/scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using ca binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using sec binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using mal binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"start scanning...","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"results file: , config file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"path to execution scannerFile: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scan command: jas_scanner/jas_scanner scan /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_0/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"successfully generated shared key for scanner execution","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scanner output:  \n tree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:50.343 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n2026-06-09 09:34:50.749 | WARNING  | extractor_wrapper:scan:508 - No custom scanners section in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.749 | WARNING  | extractor_wrapper:scan:519 - No custom-secrets-scanners-path in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.749 | INFO     | extractor_wrapper:handle_scan:321 - cves=['CVE-2025-48924']\n2026-06-09 09:34:50.749 | INFO     | extractor_wrapper:handle_scan:322 - indirect_cve_whitelist=['CVE-2026-8723']\n2026-06-09 09:34:50.749 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:51.397 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.008 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.610 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.225012+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"global timeout\", \"timeout\": 900}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.225193+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"No scanner was loaded\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.618084+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen harvester\", \"message\": \"Total files: 2140 Filtered files: 0\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.628933+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish harvest\", \"run_time\": 0.40358029102208093}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654293+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654466+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collecting python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654699+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Looking for __init__ files in direct sub-folders of dist-packages or site-packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654791+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collected python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654827+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Process python packages collected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654856+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Found 0 python files that belong to 0 known packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.654896+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.668124+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.668398+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.670933+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671028+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671150+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671200+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Starting Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671277+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Finished Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671322+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671382+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671425+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671481+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671537+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671593+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.672040+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.rpm\", \"message\": \"RPM command not found, skipping rpm detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.672167+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673140+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673274+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673375+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673431+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673493+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673636+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673690+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673763+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.673805+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Starting .NET detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.674000+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Finished .NET detection\", \"framework_count\": 0, \"candidate_count\": 0, \"total_time\": 0.0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.674045+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish mini sbom\", \"run_time\": 0.0446032079635188}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.734563+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Found elf binaries\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.735276+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Set workers amount\", \"amount\": null}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.735595+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"No scanners selected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.735679+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Total run time of scanners\", \"total_time\": 4.982948303222656e-05, \"files_scanned_sizes\": 0.0, \"files_scanned_amount\": 0, \"firmware_size\": 0.0, \"firmware_file_count\": 0}\ntree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:54.191 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n","time":"2026-06-09T09:34:55+02:00"}
+{"level":"debug","msg":"finished ca scanning, scan took: 6.018797666s","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping report scan step","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping violations management","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"finished executing analyzerManager successfully","time":"2026-06-09T09:34:55+02:00"}
+
+09:34:55 [Info] [Thread 0] Running Contextual Analysis scan on target '/Users/rodolphefontaine/jfrog-snippet-detection-test'...
+09:34:55 [Debug] Applicability scanner input YAML:
+scans:
+    - roots:
+        - /Users/rodolphefontaine/jfrog-snippet-detection-test
+      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/results.sarif
+      type: analyze-applicability
+      grep-disable: false
+      cve-whitelist:
+        - CVE-2025-48924
+      indirect-cve-whitelist:
+        - CVE-2026-8723
+      skipped-folders:
+        - '**/*.git*/**'
+        - '**/*node_modules*/**'
+        - '**/*target*/**'
+        - '**/*venv*/**'
+        - '**/*test*/**'
+        - '**/dist/**'
+      scantype: ""
+
+09:34:55 [Debug] Executing /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/config.yaml 491b2e6a-e784-4f2c-82d5-437bf3c41313
+09:34:55 [Debug] /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager "/Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/config.yaml" output: {"level":"debug","msg":"jfrog home directory not found","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"analyzer manager version: 1.33.0","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running os: darwin","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running architecture: arm64","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"jas scanner version: JAS_SCANNERv1.0.0.0,analyzers:b6e36a557e45003f735b48dd01e45ccb8005990d,binary_analysis:6703c305e8ddf57e40367b6a0298503a861609c1,foundation:095074069f162fdd05d386d88d55651e5c0fb5ff,gadgets:d68187d4a95fce8762834411702b6ed3b4ef1c20,go_extractor:08c042594b998a772866f0b4a73a3e480928f287,jas_shift_left:dad76ed516aadbef977befe1a76f42fa4fdf8c70,jas_shift_left_tag:no-tag\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"iac scanner version: TFSCANNER-0.4\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"sast scanner version: USAF version: 0.8.84; rules: c478f5089575be42c5d199e5e042b322b053d246\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"started executing analyzerManager","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"user request is valid with the following parameters: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/config.yaml ","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"configuration file content: scans:\n    - roots:\n        - /Users/rodolphefontaine/jfrog-snippet-detection-test\n      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/results.sarif\n      type: analyze-applicability\n      grep-disable: false\n      cve-whitelist:\n        - CVE-2025-48924\n      indirect-cve-whitelist:\n        - CVE-2026-8723\n      skipped-folders:\n        - '**/*venv*/**'\n        - '**/*test*/**'\n        - '**/dist/**'\n        - '**/*.git*/**'\n        - '**/*node_modules*/**'\n        - '**/*target*/**'\n      scantype: \"\"\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xsc version with the minimal version that supports xsc flow.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"dummy mode enabled - forcing Xray flow for entitlements","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"running xsc flow mode: false","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"finished send entitlement request","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray entitlements response: true","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using zd binary located in: zd_scanner/scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using ca binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using sec binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using mal binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using iac binary located in: iac_scanner/tf_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"start scanning...","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"results file: , config file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"path to execution scannerFile: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scan command: jas_scanner/jas_scanner scan /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_2/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"successfully generated shared key for scanner execution","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scanner output:  \n tree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:50.341 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n2026-06-09 09:34:50.752 | WARNING  | extractor_wrapper:scan:508 - No custom scanners section in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.753 | WARNING  | extractor_wrapper:scan:519 - No custom-secrets-scanners-path in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.753 | INFO     | extractor_wrapper:handle_scan:321 - cves=['CVE-2025-48924']\n2026-06-09 09:34:50.753 | INFO     | extractor_wrapper:handle_scan:322 - indirect_cve_whitelist=['CVE-2026-8723']\n2026-06-09 09:34:50.753 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:51.400 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.017 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.625 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.222705+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"global timeout\", \"timeout\": 900}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.222883+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"No scanner was loaded\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.615406+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen harvester\", \"message\": \"Total files: 2140 Filtered files: 0\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.626601+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish harvest\", \"run_time\": 0.4035799590055831}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.652592+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.652739+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collecting python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.652965+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Looking for __init__ files in direct sub-folders of dist-packages or site-packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.653066+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collected python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.653101+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Process python packages collected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.653156+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Found 0 python files that belong to 0 known packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.653205+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.666407+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.666712+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669170+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669271+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669392+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669438+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Starting Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669516+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Finished Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669557+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669616+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669655+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669708+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669747+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.669803+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.670263+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.rpm\", \"message\": \"RPM command not found, skipping rpm detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.670336+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671370+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671544+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671643+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671707+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671759+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671812+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671871+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671938+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.671988+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Starting .NET detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.672183+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Finished .NET detection\", \"framework_count\": 0, \"candidate_count\": 0, \"total_time\": 0.0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.672226+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish mini sbom\", \"run_time\": 0.045224124973174185}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.732779+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Found elf binaries\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.733671+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Set workers amount\", \"amount\": null}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.734091+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"No scanners selected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.734196+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Total run time of scanners\", \"total_time\": 7.510185241699219e-05, \"files_scanned_sizes\": 0.0, \"files_scanned_amount\": 0, \"firmware_size\": 0.0, \"firmware_file_count\": 0}\ntree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:54.192 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n","time":"2026-06-09T09:34:55+02:00"}
+{"level":"debug","msg":"finished ca scanning, scan took: 6.019432958s","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping report scan step","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping violations management","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"finished executing analyzerManager successfully","time":"2026-06-09T09:34:55+02:00"}
+
+09:34:55 [Debug] /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager "/Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/config.yaml" output: {"level":"debug","msg":"jfrog home directory not found","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"analyzer manager version: 1.33.0","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running os: darwin","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"running architecture: arm64","time":"2026-06-09T09:34:46+02:00"}
+{"level":"info","msg":"jas scanner version: JAS_SCANNERv1.0.0.0,analyzers:b6e36a557e45003f735b48dd01e45ccb8005990d,binary_analysis:6703c305e8ddf57e40367b6a0298503a861609c1,foundation:095074069f162fdd05d386d88d55651e5c0fb5ff,gadgets:d68187d4a95fce8762834411702b6ed3b4ef1c20,go_extractor:08c042594b998a772866f0b4a73a3e480928f287,jas_shift_left:dad76ed516aadbef977befe1a76f42fa4fdf8c70,jas_shift_left_tag:no-tag\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"iac scanner version: TFSCANNER-0.4\n","time":"2026-06-09T09:34:47+02:00"}
+{"level":"info","msg":"sast scanner version: USAF version: 0.8.84; rules: c478f5089575be42c5d199e5e042b322b053d246\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"started executing analyzerManager","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"user request is valid with the following parameters: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/config.yaml ","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"configuration file content: scans:\n    - roots:\n        - /Users/rodolphefontaine/jfrog-snippet-detection-test\n      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/results.sarif\n      type: analyze-applicability\n      grep-disable: false\n      cve-whitelist:\n        - CVE-2025-48924\n      indirect-cve-whitelist:\n        - CVE-2026-8723\n      skipped-folders:\n        - '**/*.git*/**'\n        - '**/*node_modules*/**'\n        - '**/*target*/**'\n        - '**/*venv*/**'\n        - '**/*test*/**'\n        - '**/dist/**'\n      scantype: \"\"\n","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xsc version with the minimal version that supports xsc flow.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"dummy mode enabled - forcing Xray flow for entitlements","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"running xsc flow mode: false","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"finished send entitlement request","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"xray entitlements response: true","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using mal binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using iac binary located in: iac_scanner/tf_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using zd binary located in: zd_scanner/scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using ca binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"using sec binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"start scanning...","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"results file: , config file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"path to execution scannerFile: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/jas_scanner","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scan command: jas_scanner/jas_scanner scan /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990486_1/config.yaml","time":"2026-06-09T09:34:49+02:00"}
+{"level":"debug","msg":"successfully generated shared key for scanner execution","time":"2026-06-09T09:34:49+02:00"}
+{"level":"info","msg":"scanner output:  \n tree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:50.340 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n2026-06-09 09:34:50.752 | WARNING  | extractor_wrapper:scan:508 - No custom scanners section in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.752 | WARNING  | extractor_wrapper:scan:519 - No custom-secrets-scanners-path in config, no custom secrets scanners will be loaded\n2026-06-09 09:34:50.752 | INFO     | extractor_wrapper:handle_scan:321 - cves=['CVE-2025-48924']\n2026-06-09 09:34:50.752 | INFO     | extractor_wrapper:handle_scan:322 - indirect_cve_whitelist=['CVE-2026-8723']\n2026-06-09 09:34:50.753 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:51.397 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.009 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:34:52.615 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.221354+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"global timeout\", \"timeout\": 900}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.221803+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"No scanner was loaded\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.640107+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen harvester\", \"message\": \"Total files: 2140 Filtered files: 0\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.651881+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish harvest\", \"run_time\": 0.4298977919970639}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678345+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678484+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collecting python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678721+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Looking for __init__ files in direct sub-folders of dist-packages or site-packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678811+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collected python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678847+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Process python packages collected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678881+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Found 0 python files that belong to 0 known packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.678932+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.692598+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.692880+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695312+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695409+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695541+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695592+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Starting Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695665+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Finished Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695707+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695773+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695818+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695879+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695915+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.695963+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.696408+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.rpm\", \"message\": \"RPM command not found, skipping rpm detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.696533+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697451+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697538+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697625+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697668+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697716+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697770+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697830+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697889+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.697930+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Starting .NET detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.698126+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Finished .NET detection\", \"framework_count\": 0, \"candidate_count\": 0, \"total_time\": 0.0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.698169+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish mini sbom\", \"run_time\": 0.04590237495722249}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.754857+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Found elf binaries\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.755562+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Set workers amount\", \"amount\": null}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.755916+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"No scanners selected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:34:53.755999+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Total run time of scanners\", \"total_time\": 5.1975250244140625e-05, \"files_scanned_sizes\": 0.0, \"files_scanned_amount\": 0, \"firmware_size\": 0.0, \"firmware_file_count\": 0}\ntree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:54.218 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n","time":"2026-06-09T09:34:55+02:00"}
+{"level":"debug","msg":"finished ca scanning, scan took: 6.0427915s","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping report scan step","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping violations management","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"finished executing analyzerManager successfully","time":"2026-06-09T09:34:55+02:00"}
+
+09:35:05 [Debug] /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager "/Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/config.yaml" output: {"level":"debug","msg":"jfrog home directory not found","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"analyzer manager version: 1.33.0","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"running os: darwin","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"running architecture: arm64","time":"2026-06-09T09:34:55+02:00"}
+{"level":"info","msg":"jas scanner version: JAS_SCANNERv1.0.0.0,analyzers:b6e36a557e45003f735b48dd01e45ccb8005990d,binary_analysis:6703c305e8ddf57e40367b6a0298503a861609c1,foundation:095074069f162fdd05d386d88d55651e5c0fb5ff,gadgets:d68187d4a95fce8762834411702b6ed3b4ef1c20,go_extractor:08c042594b998a772866f0b4a73a3e480928f287,jas_shift_left:dad76ed516aadbef977befe1a76f42fa4fdf8c70,jas_shift_left_tag:no-tag\n","time":"2026-06-09T09:34:56+02:00"}
+{"level":"info","msg":"iac scanner version: TFSCANNER-0.4\n","time":"2026-06-09T09:34:57+02:00"}
+{"level":"info","msg":"sast scanner version: USAF version: 0.8.84; rules: c478f5089575be42c5d199e5e042b322b053d246\n","time":"2026-06-09T09:34:58+02:00"}
+{"level":"info","msg":"xray version: 3.147.2","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"started executing analyzerManager","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"user request is valid with the following parameters: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/analyzerManager ca /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/config.yaml ","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"configuration file content: scans:\n    - roots:\n        - /Users/rodolphefontaine/jfrog-snippet-detection-test\n      output: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/results.sarif\n      type: analyze-applicability\n      grep-disable: false\n      cve-whitelist:\n        - CVE-2025-48924\n      indirect-cve-whitelist:\n        - CVE-2026-8723\n      skipped-folders:\n        - '**/*.git*/**'\n        - '**/*node_modules*/**'\n        - '**/*target*/**'\n        - '**/*venv*/**'\n        - '**/*test*/**'\n        - '**/dist/**'\n      scantype: \"\"\n","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"comparing the current platform xsc version with the minimal version that supports xsc flow.","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"dummy mode enabled - forcing Xray flow for entitlements","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"running xsc flow mode: false","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"finished send entitlement request","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"xray entitlements response: true","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"comparing the current platform xray version with the minimal xray version that supports JAS binary.","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using JAS binaries with xray version: 3.147.2","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using iac binary located in: iac_scanner/tf_scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using zd binary located in: zd_scanner/scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using ca binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using sec binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"using mal binary located in: jas_scanner/jas_scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"start scanning...","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"results file: , config file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/config.yaml","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"path to execution scannerFile: /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/jas_scanner","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"scan command: jas_scanner/jas_scanner scan /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990476-103847340/Applicability_1780990495_0/config.yaml","time":"2026-06-09T09:34:59+02:00"}
+{"level":"debug","msg":"successfully generated shared key for scanner execution","time":"2026-06-09T09:34:59+02:00"}
+{"level":"info","msg":"scanner output:  \n tree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:34:59.855 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n2026-06-09 09:35:00.291 | WARNING  | extractor_wrapper:scan:508 - No custom scanners section in config, no custom secrets scanners will be loaded\n2026-06-09 09:35:00.291 | WARNING  | extractor_wrapper:scan:519 - No custom-secrets-scanners-path in config, no custom secrets scanners will be loaded\n2026-06-09 09:35:00.291 | INFO     | extractor_wrapper:handle_scan:321 - cves=['CVE-2025-48924']\n2026-06-09 09:35:00.291 | INFO     | extractor_wrapper:handle_scan:322 - indirect_cve_whitelist=['CVE-2026-8723']\n2026-06-09 09:35:00.291 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:35:00.920 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:35:01.538 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n2026-06-09 09:35:02.147 | INFO     | vdoo_apis.ssl_bundle_handle:get_ssl_verify:53 - CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:02.761426+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"global timeout\", \"timeout\": 900}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:02.761905+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"No scanner was loaded\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.226131+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen harvester\", \"message\": \"Total files: 2140 Filtered files: 0\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.238607+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish harvest\", \"run_time\": 0.47642733296379447}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.269798+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.269961+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collecting python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.270200+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Looking for __init__ files in direct sub-folders of dist-packages or site-packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.270287+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Collected python packages on firmware\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.270321+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Process python packages collected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.270358+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"Found 0 python files that belong to 0 known packages\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.270408+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.python_detection\", \"message\": \"python detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.283190+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.283425+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished NodeModulesDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285375+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"start JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285447+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.javascript_detection\", \"message\": \"finished JQueryDetector detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285549+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285588+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Starting Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285661+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.java_detection\", \"message\": \"Finished Java detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285704+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285756+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.ruby\", \"message\": \"ruby detection finished\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285791+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285841+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.debian\", \"message\": \"debian detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285876+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.285934+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.alpine\", \"message\": \"alpine detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.286553+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.rpm\", \"message\": \"RPM command not found, skipping rpm detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.286687+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.287620+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.elf\", \"message\": \"elf detection finished\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.287725+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.287818+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.go\", \"message\": \"go-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.287867+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.287922+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.google_cloud_sdk_detection\", \"message\": \"google-cloud-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288014+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection started\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288119+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.logstash\", \"message\": \"logstash-sdk detection finished\", \"amount\": 0, \"total_time\": 0.0, \"total_sdks\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288205+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_apis\", \"message\": \"CA bundle not found at /Users/rodolphefontaine/.jfrog/security/certs because folder does not exist. Using default CA bundle at /Users/rodolphefontaine/.jfrog/dependencies/analyzerManager/jas_scanner/_internal/certifi/cacert.pem\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288253+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Starting .NET detection\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288441+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen vdoo_mini_sbom.dotnet_detection\", \"message\": \"Finished .NET detection\", \"framework_count\": 0, \"candidate_count\": 0, \"total_time\": 0.0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.288483+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen extractor_wrapper\u003e\", \"message\": \"finish mini sbom\", \"run_time\": 0.04943924996769056}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.338606+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Found elf binaries\", \"amount\": 0}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.339392+00:00\", \"level\": \"DEBUG\", \"app_loglevel\": \"DEBUG\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Set workers amount\", \"amount\": null}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.339813+00:00\", \"level\": \"WARNING\", \"app_loglevel\": \"WARNING\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"No scanners selected\"}\n{\"traceid\": \"unknown\", \"app_trace_id\": \"unknown\", \"timestamp\": \"2026-06-09T07:35:03.339910+00:00\", \"level\": \"INFO\", \"app_loglevel\": \"INFO\", \"name\": \"appscan\", \"module\": \"\u003cfrozen gadgets_management\", \"message\": \"Total run time of scanners\", \"total_time\": 5.7220458984375e-05, \"files_scanned_sizes\": 0.0, \"files_scanned_amount\": 0, \"firmware_size\": 0.0, \"firmware_file_count\": 0}\ntree_sitter/__init__.py:36: FutureWarning: Language(path, name) is deprecated. Use Language(ptr, name) instead.\n2026-06-09 09:35:03.809 | WARNING  | vdoo_apis.xray_settings:load_system_yaml:54 - System yaml not found in /Users/rodolphefontaine/var/etc/system.yaml, skipping loading it\n","time":"2026-06-09T09:35:05+02:00"}
+{"level":"debug","msg":"finished ca scanning, scan took: 6.079927875s","time":"2026-06-09T09:35:05+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping report scan step","time":"2026-06-09T09:35:05+02:00"}
+{"level":"info","msg":"dummy mode enabled - skipping violations management","time":"2026-06-09T09:35:05+02:00"}
+{"level":"info","msg":"finished executing analyzerManager successfully","time":"2026-06-09T09:35:05+02:00"}
+
+09:35:05 [Debug] Finished scanning. Uploading scan results to Artifactory
+09:35:05 [Debug] [Thread 0] Scans output directory was provided, saving source_code scan results to file '/var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990505-1604938695/source_code_1780990505412.cdx.json'...
+09:35:05 [Debug] Created temp CycloneDx file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990505-1604938695/source_code_1780990505412.cdx.json
+09:35:05 [Debug] found valid CycloneDX SBOM file with Metadata component:
+{
+  "bom-ref": "file:34112ff146bc49eb35a0ae386c1e0afd",
+  "type": "file",
+  "name": "/Users/rodolphefontaine/jfrog-snippet-detection-test",
+  "version": "1.0.0"
+}
+09:35:05 [Debug] Sending HTTP GET request to: https://solenglatest.jfrog.io/artifactory/api/repositories/cli-scan-results
+09:35:06 [Debug] Uploading scan results to cli-scan-results/rodolphef
+09:35:06 [Debug] In Dry-run mode, include-dir flag will be ignored.
+09:35:06 [Debug] [Thread 0] Uploading: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990505-1604938695/source_code_1780990505412.cdx.json
+09:35:06 [Debug] Sending HTTP PUT request to: https://solenglatest.jfrog.io/artifactory/cli-scan-results/rodolphef/source_code_1780990505412.cdx.json
+09:35:07 [Debug] [Thread 0] Artifactory response: 201  
+09:35:07 [Debug] Uploaded 1 artifacts.
+09:35:07 [Debug] Attempting to remove file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990507-3727917998
+09:35:07 [Debug] These files were uploaded:
+
+ cli-scan-results
+└──  rodolphef
+    └──  source_code_1780990505412.cdx.json
+
+
+09:35:07 [Debug] Attempting to remove file: /var/folders/c5/5why84t171n4zqjkwcyqj8qh0000gn/T/jfrog.cli.temp.-1780990507-3484554259
+09:35:07 [Debug] Sending HTTP PUT request to: https://solenglatest.jfrog.io/xray/api/v1/xsc/event
+09:35:08 [Debug] Command event:
+{{0 completed   8 0 false       43.399695s   } 491b2e6a-e784-4f2c-82d5-437bf3c41313 }
+09:35:08 [Info] ####### jf audit Scan Finished #######
+
+Vulnerable Dependencies
+┌────────────────┬──────────┬────────────────┬───────────────────────────┬────────────┬───────────────────────────┬───────────┬─────────────────────┬───────┐
+│ CVE            │ SEVERITY │ CONTEXTUAL     │ DIRECT                    │ DIRECT     │ AFFECTED                  │ AFFECTED  │ FIXED               │ TYPE  │
+│                │          │ ANALYSIS       │ DEPENDENCY                │ DEPENDENCY │ COMPONENT                 │ COMPONENT │ VERSIONS            │       │
+│                │          │                │                           │ VERSION    │ NAME                      │ VERSION   │                     │       │
+├────────────────┼──────────┼────────────────┼───────────────────────────┼────────────┼───────────────────────────┼───────────┼─────────────────────┼───────┤
+│ CVE-2025-48924 │ Medium   │ Not Covered    │ org.apache.commons:common │ 3.14.0     │ org.apache.commons:common │ 3.14.0    │ 3.18.0.redhat-00003 │ maven │
+│                │          │                │ s-lang3                   │            │ s-lang3                   │           │                     │       │
+├────────────────┼──────────┼────────────────┼───────────────────────────┼────────────┼───────────────────────────┼───────────┼─────────────────────┼───────┤
+│ CVE-2026-8723  │ Medium   │ Not Applicable │ express                   │ 4.22.1     │ qs                        │ 6.14.2    │ 6.15.2              │ npm   │
+└────────────────┴──────────┴────────────────┴───────────────────────────┴────────────┴───────────────────────────┴───────────┴─────────────────────┴───────┘
+
+Software Bill of Materials (SBOM)
+┌───────────────────────────┬─────────┬────────┬────────────┐
+│ COMPONENT                 │ VERSION │ TYPE   │ RELATION   │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ <root>                    │ unknown │ pypi   │ Root       │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ <root>                    │ unknown │ pypi   │ Root       │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ <root>                    │ unknown │ pypi   │ Root       │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ <root>                    │ unknown │ pypi   │ Root       │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ com.jfrog/snippet-detecti │ 1.0.0   │ maven  │ Root       │
+│ on-test                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ com.jfrog/snippet-detecti │ 1.0.0   │ maven  │ Root       │
+│ on-test                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ com.jfrog/snippet-detecti │ 1.0.0   │ maven  │ Root       │
+│ on-test                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ com.jfrog/snippet-detecti │ 1.0.0   │ maven  │ Root       │
+│ on-test                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ github.com/jfrog/snippet- │ unknown │ golang │ Root       │
+│ detection-test            │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ github.com/jfrog/snippet- │ unknown │ golang │ Root       │
+│ detection-test            │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ github.com/jfrog/snippet- │ unknown │ golang │ Root       │
+│ detection-test            │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ github.com/jfrog/snippet- │ unknown │ golang │ Root       │
+│ detection-test            │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ jfrog-snippet-detection-t │ 1.0.0   │ npm    │ Root       │
+│ est                       │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ jfrog-snippet-detection-t │ 1.0.0   │ npm    │ Root       │
+│ est                       │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ jfrog-snippet-detection-t │ 1.0.0   │ npm    │ Root       │
+│ est                       │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ jfrog-snippet-detection-t │ 1.0.0   │ npm    │ Root       │
+│ est                       │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ express                   │ 4.22.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ express                   │ 4.22.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ express                   │ 4.22.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ express                   │ 4.22.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ffmpeg/ffmpeg             │ n8.1    │ github │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ffmpeg/ffmpeg             │ n8.1    │ github │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ffmpeg/ffmpeg             │ n8.1    │ github │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ffmpeg/ffmpeg             │ n8.1    │ github │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ lodash                    │ 4.18.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ lodash                    │ 4.18.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ lodash                    │ 4.18.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ lodash                    │ 4.18.1  │ npm    │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ org.apache.commons/common │ 3.14.0  │ maven  │ Direct     │
+│ s-lang3                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ org.apache.commons/common │ 3.14.0  │ maven  │ Direct     │
+│ s-lang3                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ org.apache.commons/common │ 3.14.0  │ maven  │ Direct     │
+│ s-lang3                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ org.apache.commons/common │ 3.14.0  │ maven  │ Direct     │
+│ s-lang3                   │         │        │            │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ stdlib                    │ 1.22    │ golang │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ stdlib                    │ 1.22    │ golang │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ stdlib                    │ 1.22    │ golang │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ stdlib                    │ 1.22    │ golang │ Direct     │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ accepts                   │ 1.3.8   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ accepts                   │ 1.3.8   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ accepts                   │ 1.3.8   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ accepts                   │ 1.3.8   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ array-flatten             │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ array-flatten             │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ array-flatten             │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ array-flatten             │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ body-parser               │ 1.20.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ body-parser               │ 1.20.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ body-parser               │ 1.20.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ body-parser               │ 1.20.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ bytes                     │ 3.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ bytes                     │ 3.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ bytes                     │ 3.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ bytes                     │ 3.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bind-apply-helpers   │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bind-apply-helpers   │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bind-apply-helpers   │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bind-apply-helpers   │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bound                │ 1.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bound                │ 1.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bound                │ 1.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ call-bound                │ 1.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-disposition       │ 0.5.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-disposition       │ 0.5.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-disposition       │ 0.5.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-disposition       │ 0.5.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-type              │ 1.0.5   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-type              │ 1.0.5   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-type              │ 1.0.5   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ content-type              │ 1.0.5   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie                    │ 0.7.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie                    │ 0.7.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie                    │ 0.7.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie                    │ 0.7.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie-signature          │ 1.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie-signature          │ 1.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie-signature          │ 1.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ cookie-signature          │ 1.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ debug                     │ 2.6.9   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ debug                     │ 2.6.9   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ debug                     │ 2.6.9   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ debug                     │ 2.6.9   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ depd                      │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ depd                      │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ depd                      │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ depd                      │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ destroy                   │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ destroy                   │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ destroy                   │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ destroy                   │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ dunder-proto              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ dunder-proto              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ dunder-proto              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ dunder-proto              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ee-first                  │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ee-first                  │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ee-first                  │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ee-first                  │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ encodeurl                 │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ encodeurl                 │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ encodeurl                 │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ encodeurl                 │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-define-property        │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-define-property        │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-define-property        │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-define-property        │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-errors                 │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-errors                 │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-errors                 │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-errors                 │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-object-atoms           │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-object-atoms           │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-object-atoms           │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ es-object-atoms           │ 1.1.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ escape-html               │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ escape-html               │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ escape-html               │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ escape-html               │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ etag                      │ 1.8.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ etag                      │ 1.8.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ etag                      │ 1.8.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ etag                      │ 1.8.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ finalhandler              │ 1.3.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ finalhandler              │ 1.3.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ finalhandler              │ 1.3.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ finalhandler              │ 1.3.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ forwarded                 │ 0.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ forwarded                 │ 0.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ forwarded                 │ 0.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ forwarded                 │ 0.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ fresh                     │ 0.5.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ fresh                     │ 0.5.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ fresh                     │ 0.5.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ fresh                     │ 0.5.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ function-bind             │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ function-bind             │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ function-bind             │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ function-bind             │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-intrinsic             │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-intrinsic             │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-intrinsic             │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-intrinsic             │ 1.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-proto                 │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-proto                 │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-proto                 │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ get-proto                 │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ gopd                      │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ gopd                      │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ gopd                      │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ gopd                      │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ has-symbols               │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ has-symbols               │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ has-symbols               │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ has-symbols               │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ hasown                    │ 2.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ hasown                    │ 2.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ hasown                    │ 2.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ hasown                    │ 2.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ http-errors               │ 2.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ http-errors               │ 2.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ http-errors               │ 2.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ http-errors               │ 2.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ iconv-lite                │ 0.4.24  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ iconv-lite                │ 0.4.24  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ iconv-lite                │ 0.4.24  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ iconv-lite                │ 0.4.24  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ inherits                  │ 2.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ inherits                  │ 2.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ inherits                  │ 2.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ inherits                  │ 2.0.4   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ipaddr.js                 │ 1.9.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ipaddr.js                 │ 1.9.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ipaddr.js                 │ 1.9.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ipaddr.js                 │ 1.9.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ math-intrinsics           │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ math-intrinsics           │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ math-intrinsics           │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ math-intrinsics           │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ media-typer               │ 0.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ media-typer               │ 0.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ media-typer               │ 0.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ media-typer               │ 0.3.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ merge-descriptors         │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ merge-descriptors         │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ merge-descriptors         │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ merge-descriptors         │ 1.0.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ methods                   │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ methods                   │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ methods                   │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ methods                   │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime                      │ 1.6.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime                      │ 1.6.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime                      │ 1.6.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime                      │ 1.6.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-db                   │ 1.52.0  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-db                   │ 1.52.0  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-db                   │ 1.52.0  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-db                   │ 1.52.0  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-types                │ 2.1.35  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-types                │ 2.1.35  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-types                │ 2.1.35  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ mime-types                │ 2.1.35  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.1.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.1.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.1.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.1.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ ms                        │ 2.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ negotiator                │ 0.6.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ negotiator                │ 0.6.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ negotiator                │ 0.6.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ negotiator                │ 0.6.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ object-inspect            │ 1.13.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ object-inspect            │ 1.13.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ object-inspect            │ 1.13.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ object-inspect            │ 1.13.4  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ on-finished               │ 2.4.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ on-finished               │ 2.4.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ on-finished               │ 2.4.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ on-finished               │ 2.4.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ parseurl                  │ 1.3.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ parseurl                  │ 1.3.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ parseurl                  │ 1.3.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ parseurl                  │ 1.3.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ path-to-regexp            │ 0.1.13  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ path-to-regexp            │ 0.1.13  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ path-to-regexp            │ 0.1.13  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ path-to-regexp            │ 0.1.13  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ proxy-addr                │ 2.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ proxy-addr                │ 2.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ proxy-addr                │ 2.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ proxy-addr                │ 2.0.7   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ qs                        │ 6.14.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ qs                        │ 6.14.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ qs                        │ 6.14.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ qs                        │ 6.14.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ range-parser              │ 1.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ range-parser              │ 1.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ range-parser              │ 1.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ range-parser              │ 1.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ raw-body                  │ 2.5.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ raw-body                  │ 2.5.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ raw-body                  │ 2.5.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ raw-body                  │ 2.5.3   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safe-buffer               │ 5.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safe-buffer               │ 5.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safe-buffer               │ 5.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safe-buffer               │ 5.2.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safer-buffer              │ 2.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safer-buffer              │ 2.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safer-buffer              │ 2.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ safer-buffer              │ 2.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ send                      │ 0.19.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ send                      │ 0.19.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ send                      │ 0.19.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ send                      │ 0.19.2  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ serve-static              │ 1.16.3  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ serve-static              │ 1.16.3  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ serve-static              │ 1.16.3  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ serve-static              │ 1.16.3  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ setprototypeof            │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ setprototypeof            │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ setprototypeof            │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ setprototypeof            │ 1.2.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel              │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel              │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel              │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel              │ 1.1.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-list         │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-list         │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-list         │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-list         │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-map          │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-map          │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-map          │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-map          │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-weakmap      │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-weakmap      │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-weakmap      │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ side-channel-weakmap      │ 1.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ statuses                  │ 2.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ statuses                  │ 2.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ statuses                  │ 2.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ statuses                  │ 2.0.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ toidentifier              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ toidentifier              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ toidentifier              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ toidentifier              │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ type-is                   │ 1.6.18  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ type-is                   │ 1.6.18  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ type-is                   │ 1.6.18  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ type-is                   │ 1.6.18  │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ unpipe                    │ 1.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ unpipe                    │ 1.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ unpipe                    │ 1.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ unpipe                    │ 1.0.0   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ utils-merge               │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ utils-merge               │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ utils-merge               │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ utils-merge               │ 1.0.1   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ vary                      │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ vary                      │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ vary                      │ 1.1.2   │ npm    │ Transitive │
+├───────────────────────────┼─────────┼────────┼────────────┤
+│ vary                      │ 1.1.2   │ npm    │ Transitive │
+└───────────────────────────┴─────────┴────────┴────────────┘

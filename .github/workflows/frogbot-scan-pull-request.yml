@@ -1,0 +1,20 @@
+name: "Frogbot Scan Pull Request"
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+permissions:
+  pull-requests: write
+  contents: read
+  security-events: write
+jobs:
+  scan-pull-request:
+    runs-on: ubuntu-latest
+    # Uncomment for public repos with a GitHub Environment named "frogbot" (at least one reviewer).
+    # environment: frogbot
+    steps:
+      - uses: jfrog/frogbot@v3
+        env:
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_USE_CONFIG_PROFILE: "true"
