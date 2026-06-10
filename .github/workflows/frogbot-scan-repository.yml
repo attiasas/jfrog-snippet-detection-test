@@ -26,5 +26,3 @@ jobs:
           JF_GIT_BASE_BRANCH: ${{ matrix.branch }}
           JF_USE_CONFIG_PROFILE: "true"
           JFROG_CLI_LOG_LEVEL: DEBUG
-
-@
