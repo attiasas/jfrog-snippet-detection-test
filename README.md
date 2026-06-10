@@ -73,7 +73,9 @@ This repo uses [Frogbot V3](https://docs.jfrog.com/security/docs/github) plus CL
 Frogbot and `jf audit --snippet` both rely on platform configuration:
 
 1. **Administration > Xray > Indexed Resources > Git Repositories** — index this repository.
-2. Enable **Snippet Detection** on the Git Repository resource.
-3. Optionally create Watches/Policies to surface violations in Frogbot.
+2. Enable **SCA** and **Snippet Detection** on the Git Repository resource.
+3. Attach the Xray watch **`minimum-to-respect`** to this Git Repository (required for CVE/license violations in Frogbot and `jf audit`).
+
+CLI and CI audits use `--watches=minimum-to-respect` by default (override with `JF_SNIPPET_WATCHES` or the `JF_SNIPPET_WATCHES` repository variable).
 
 Frogbot workflows set `JF_USE_CONFIG_PROFILE=true` so scans use the Git Repository profile defined in the JFrog Platform UI (not a local `frogbot-config.yml`).

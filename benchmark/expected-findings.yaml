@@ -2,7 +2,7 @@
 # Scoring: compare CLI SBOM + license table and Xray Scans List against these rows.
 #
 # Docs: https://docs.jfrog.com/security/docs/snippet-detection
-# Run:  jf audit --sca --sbom --static-sca --snippet --watches=<watch>
+# Run:  jf audit --sca --sbom --static-sca --snippet --watches=minimum-to-respect
 
 version: 1
 product: jfrog-snippet-detection

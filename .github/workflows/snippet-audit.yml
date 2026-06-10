@@ -23,6 +23,6 @@ jobs:
 
       - name: Run snippet audit
         env:
-          JF_SNIPPET_WATCHES: ${{ vars.JF_SNIPPET_WATCHES }}
+          JF_SNIPPET_WATCHES: ${{ vars.JF_SNIPPET_WATCHES || 'minimum-to-respect' }}
           JF_PROJECT: ${{ vars.JF_PROJECT }}
         run: bash scripts/run-snippet-audit.sh
