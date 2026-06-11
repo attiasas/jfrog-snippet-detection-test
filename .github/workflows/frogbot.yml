@@ -31,7 +31,6 @@ jobs:
           chmod +x "${{ runner.temp }}/frogbot/frogbot"
 
       - name: Scan PR with Frogbot
-        if: github.event_name == 'pull_request'
         run: |
           if [ -z "$JF_GIT_PULL_REQUEST_ID" ]; then
             "${{ runner.temp }}/frogbot/frogbot" scan-repository
@@ -50,4 +49,4 @@ jobs:
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JF_GIT_REPO: jfrog-snippet-detection-test
           JF_GIT_BASE_BRANCH: main
-          JF_GIT_PULL_REQUEST_ID: ${{ github.event_name == 'pull_request' ? github.event.pull_request.number : '' }}
+          JF_GIT_PULL_REQUEST_ID: ${{ github.event.pull_request.number }}
