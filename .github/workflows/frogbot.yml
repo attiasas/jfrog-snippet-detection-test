@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   frogbot-scan:
-    runs-on: xray-dind-amd-scale-set
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
