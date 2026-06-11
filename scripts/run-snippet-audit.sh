@@ -19,13 +19,15 @@ if ! command -v jf >/dev/null 2>&1; then
   exit 1
 fi
 
-ARGS=(audit --sca --sbom --static-sca --snippet)
+ARGS=(audit --sca --sbom --static-sca --snippet --exclusions=*.git*;*node_modules*;*target*;*venv*;dist)
 
 if [[ -n "$PROJECT" ]]; then
   ARGS+=(--project="$PROJECT")
 else
   ARGS+=(--watches="$WATCHES")
 fi
+
+export JROG_CLI_LOG_LEVEL=DEBUG
 
 echo "Running: jf ${ARGS[*]}"
 jf "${ARGS[@]}"
