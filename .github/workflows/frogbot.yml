@@ -1,0 +1,53 @@
+name: Frogbot Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  pull-requests: write
+  contents: read
+  security-events: write
+
+jobs:
+  frogbot-scan:
+    runs-on: xray-dind-amd-scale-set
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Frogbot binary
+        run: |
+          mkdir -p "${{ runner.temp }}/frogbot"
+          curl -fsSL "https://releases.jfrog.io/artifactory/frogbot/v3/${{ vars.FROGBOT_VERSION }}/frogbot-linux-amd64/frogbot" -o "${{ runner.temp }}/frogbot/frogbot"
+          chmod +x "${{ runner.temp }}/frogbot/frogbot"
+
+      - name: Scan PR with Frogbot
+        if: github.event_name == 'pull_request'
+        run: |
+          if [ -z "$JF_GIT_PULL_REQUEST_ID" ]; then
+            "${{ runner.temp }}/frogbot/frogbot" scan-repository
+          else
+            "${{ runner.temp }}/frogbot/frogbot" scan-pull-request
+          fi
+        env:
+          JFROG_CLI_LOG_LEVEL: DEBUG
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          # Enable snippet scan
+          JFROG_CLI_XRAY_LIB_PLUGIN_VERSION: ${{ vars.XSPECTER_VERSION || '' }}
+          # Define the GitHub repository details
+          JF_GIT_PROVIDER: github
+          JF_GIT_OWNER: attiasas
+          JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JF_GIT_REPO: jfrog-snippet-detection-test
+          JF_GIT_BASE_BRANCH: main
+          JF_GIT_PULL_REQUEST_ID: ${{ github.event_name == 'pull_request' ? github.event.pull_request.number : '' }}
