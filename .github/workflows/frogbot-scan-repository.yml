@@ -18,6 +18,7 @@ jobs:
       matrix:
         branch: ["main"]
     steps:
+      - uses: actions/checkout@v6
       - uses: jfrog/frogbot@v3
         env:
           JF_URL: ${{ secrets.JF_URL }}
